@@ -3,41 +3,30 @@ name: github pages
 on:
   push:
     branches:
-    - source
+      - source
 
 jobs:
   build-deploy:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v1
-      with:
-        submodules: true
+      - uses: actions/checkout@v2
+        with:
+          submodules: true
 
-    - name: Clone Org-mode exporter
-      run: git clone https://github.com/kaushalmodi/ox-hugo.git ox-hugo
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: "latest"
 
-    - name: Setup emacs
-      uses: purcell/setup-emacs@master
-      with:
-        version: 26.3
+      - name: Build
+        run: hugo --minify --theme=hermit
 
-    - name: Export Org file to Markdown
-      run: emacs ./posts.org --batch -L ./ox-hugo -l ox-hugo.el --eval='(org-hugo-export-wim-to-md t)' --kill
+      - name: Copy CNAME entry
+        run: cp ./CNAME ./public/
 
-    - name: Setup Hugo
-      uses: peaceiris/actions-hugo@v2
-      with:
-        hugo-version: 'latest'
-
-    - name: Build
-      run: hugo --minify --theme=hermit
-
-    - name: Copy CNAME entry
-      run: cp ./CNAME ./public/
-
-    - name: Deploy
-      uses: peaceiris/actions-gh-pages@v2
-      env:
-        ACTIONS_DEPLOY_KEY: ${{ secrets.ACTIONS_DEPLOY_KEY }}
-        PUBLISH_BRANCH: master
-        PUBLISH_DIR: ./public
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v2
+        env:
+          ACTIONS_DEPLOY_KEY: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+          PUBLISH_BRANCH: master
+          PUBLISH_DIR: ./public
