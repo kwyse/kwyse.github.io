@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on The Blog of Krishan Wyse</title><link>https://www.kwyse.com/posts/</link><description>Recent content in Posts on The Blog of Krishan Wyse</description><generator>Hugo -- gohugo.io</generator><language>en-gb</language><lastBuildDate>Sun, 12 Apr 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://www.kwyse.com/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>A Minimal React Native App for Android</title><link>https://www.kwyse.com/posts/minimal-react-native-app-for-android/</link><pubDate>Sun, 12 Apr 2020 00:00:00 +0000</pubDate><guid>https://www.kwyse.com/posts/minimal-react-native-app-for-android/</guid><description>Generators that build seed applications for you from templates appear to be the norm among front-end ecosystems. A recent foray into app develop prompted me to check out React Native. Right from the start, the documentation recommends creating a project from a generator — and the project it creates is big. It then doesn&amp;rsquo;t go on to explain what each of the individual files are doing.
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on The Blog of Krishan Wyse</title><link>https://www.kwyse.com/posts/</link><description>Recent content in Posts on The Blog of Krishan Wyse</description><generator>Hugo -- gohugo.io</generator><language>en-gb</language><lastBuildDate>Sun, 12 Apr 2020 00:00:00 +0100</lastBuildDate><atom:link href="https://www.kwyse.com/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>A Minimal React Native App for Android</title><link>https://www.kwyse.com/posts/minimal-react-native-app-for-android/</link><pubDate>Sun, 12 Apr 2020 00:00:00 +0100</pubDate><guid>https://www.kwyse.com/posts/minimal-react-native-app-for-android/</guid><description>Generators that build seed applications for you from templates appear to be the norm among front-end ecosystems. A recent foray into app develop prompted me to check out React Native. Right from the start, the documentation recommends creating a project from a generator — and the project it creates is big. It then doesn&amp;rsquo;t go on to explain what each of the individual files are doing.
 I&amp;rsquo;m not a fan of this approach.</description><content type="html"><![CDATA[<p>Generators that build seed applications for you from templates appear to be the
 norm among front-end ecosystems.  A recent foray into app develop prompted me to
 check out React Native.  Right from the start, the documentation recommends
@@ -22,7 +22,7 @@ itself is just four files:</p>
 </ul>
 <p>Starting with <code>package.json</code>, since that manages the packages, include React and
 React Native, and with appropriate versions:</p>
-<div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
   <span class="nt">&#34;dependencies&#34;</span><span class="p">:</span> <span class="p">{</span>
     <span class="nt">&#34;react&#34;</span><span class="p">:</span> <span class="s2">&#34;16.11&#34;</span><span class="p">,</span>
     <span class="nt">&#34;react-native&#34;</span><span class="p">:</span> <span class="s2">&#34;0.62&#34;</span>
@@ -30,17 +30,17 @@ React Native, and with appropriate versions:</p>
 <span class="p">}</span>
 </code></pre></div><p>The two files above it are necessary just to get things working.  <code>index.js</code>
 must register the application:</p>
-<div class="highlight"><pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kr">import</span> <span class="p">{</span> <span class="nx">AppRegistry</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;react-native&#39;</span><span class="p">;</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kr">import</span> <span class="p">{</span> <span class="nx">AppRegistry</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;react-native&#39;</span><span class="p">;</span>
 <span class="kr">import</span> <span class="nx">App</span> <span class="nx">from</span> <span class="s1">&#39;./App&#39;</span><span class="p">;</span>
 <span class="kr">import</span> <span class="p">{</span> <span class="nx">name</span> <span class="nx">as</span> <span class="nx">appName</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;./app.json&#39;</span><span class="p">;</span>
 
 <span class="nx">AppRegistry</span><span class="p">.</span><span class="nx">registerComponent</span><span class="p">(</span><span class="nx">appName</span><span class="p">,</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="nx">App</span><span class="p">);</span>
 </code></pre></div><p><code>app.json</code> need only include the name of the application:</p>
-<div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
   <span class="nt">&#34;name&#34;</span><span class="p">:</span> <span class="s2">&#34;MyMinimalApp&#34;</span>
 <span class="p">}</span>
 </code></pre></div><p>The final file is the interesting one.  This is where the layout logic lives.</p>
-<div class="highlight"><pre class="chroma"><code class="language-jsx" data-lang="jsx"><span class="kr">import</span> <span class="nx">React</span> <span class="nx">from</span> <span class="s1">&#39;react&#39;</span><span class="p">;</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="kr">import</span> <span class="nx">React</span> <span class="nx">from</span> <span class="s1">&#39;react&#39;</span><span class="p">;</span>
 <span class="kr">import</span> <span class="p">{</span> <span class="nx">Text</span><span class="p">,</span> <span class="nx">View</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;react-native&#39;</span><span class="p">;</span>
 
 <span class="kr">export</span> <span class="k">default</span> <span class="kd">function</span> <span class="nx">App</span><span class="p">()</span> <span class="p">{</span>
@@ -85,7 +85,7 @@ executed without installation on the local machine.</p>
 <li><code>app/build.gradle</code></li>
 </ul>
 <p>The first Java class, <code>MainActivity</code>, has little boilerplate needed.</p>
-<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">com.myminimalapp</span><span class="o">;</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">com.myminimalapp</span><span class="o">;</span>
 
 <span class="kn">import</span> <span class="nn">com.facebook.react.ReactActivity</span><span class="o">;</span>
 
@@ -99,7 +99,7 @@ executed without installation on the local machine.</p>
 Native knows which component it must render.</p>
 <p>The second Java file, <code>MainApplication</code>, must implement the one method of
 <code>ReactApplication</code>.</p>
-<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">com.myminimalapp</span><span class="o">;</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">com.myminimalapp</span><span class="o">;</span>
 
 <span class="kn">import</span> <span class="nn">android.app.Application</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">com.facebook.react.PackageList</span><span class="o">;</span>
@@ -133,7 +133,7 @@ Native knows which component it must render.</p>
 </code></pre></div><p><code>ReactNativeHost</code> has two abstract methods that must be implemented.  The final
 method, <code>getJSMainModuleName()</code>, must be overridden so that the correct
 Javascript file is executed on startup.</p>
-<div class="highlight"><pre class="chroma"><code class="language-xml" data-lang="xml"><span class="nt">&lt;manifest</span> <span class="na">xmlns:android=</span><span class="s">&#34;http://schemas.android.com/apk/res/android&#34;</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="nt">&lt;manifest</span> <span class="na">xmlns:android=</span><span class="s">&#34;http://schemas.android.com/apk/res/android&#34;</span>
     <span class="na">package=</span><span class="s">&#34;com.myminimalapp&#34;</span><span class="nt">&gt;</span>
   <span class="nt">&lt;uses-permission</span> <span class="na">android:name=</span><span class="s">&#34;android.permission.INTERNET&#34;</span> <span class="nt">/&gt;</span>
   <span class="nt">&lt;application</span>
@@ -154,17 +154,17 @@ classes, sets the app theme, declares necessary permissions, and specifies the
 core behaviour on startup.  <code>android:usesCleartextTraffic</code> is necessary
 <a href="https://stackoverflow.com/a/56808180">starting from Android API level 28</a>.</p>
 <p>The app theme is declared in <code>styles.xml</code>.</p>
-<div class="highlight"><pre class="chroma"><code class="language-xml" data-lang="xml"><span class="nt">&lt;resources&gt;</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="nt">&lt;resources&gt;</span>
   <span class="nt">&lt;style</span> <span class="na">name=</span><span class="s">&#34;AppTheme&#34;</span> <span class="na">parent=</span><span class="s">&#34;Theme.AppCompat.Light.NoActionBar&#34;</span><span class="nt">&gt;&lt;/style&gt;</span>
 <span class="nt">&lt;/resources&gt;</span>
 </code></pre></div><p>With that, the final step is to flesh our the build system.  <code>gradlew</code> is a
 file generated by invoking Gradle inside the project.</p>
-<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">$ gradle wrapper
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">$ gradle wrapper
 </code></pre></div><p>This will also generate a <code>gradlew.bat</code> executable for use on Windows.
 <code>settings.gradle</code> declares the nested <code>app</code> project inside the Android project.</p>
-<div class="highlight"><pre class="chroma"><code class="language-groovy" data-lang="groovy"><span class="n">include</span> <span class="s1">&#39;:app&#39;</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-groovy" data-lang="groovy"><span class="n">include</span> <span class="s1">&#39;:app&#39;</span>
 </code></pre></div><p>The two <code>build.gradle</code> files are all that&rsquo;s left.</p>
-<div class="highlight"><pre class="chroma"><code class="language-groovy" data-lang="groovy"><span class="n">buildscript</span> <span class="o">{</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-groovy" data-lang="groovy"><span class="n">buildscript</span> <span class="o">{</span>
     <span class="n">ext</span> <span class="o">{</span>
 	<span class="n">buildToolsVersion</span> <span class="o">=</span> <span class="s2">&#34;28.0.3&#34;</span>
 	<span class="n">minSdkVersion</span> <span class="o">=</span> <span class="mi">16</span>
@@ -201,7 +201,7 @@ file generated by invoking Gradle inside the project.</p>
 </code></pre></div><p>This is the root <code>build.gradle</code> file.  It declares the Android API versions to
 use and necessary dependencies.</p>
 <p>The one inside <code>app</code> is more complex.</p>
-<div class="highlight"><pre class="chroma"><code class="language-groovy" data-lang="groovy"><span class="n">apply</span> <span class="nl">plugin:</span> <span class="s2">&#34;com.android.application&#34;</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-groovy" data-lang="groovy"><span class="n">apply</span> <span class="nl">plugin:</span> <span class="s2">&#34;com.android.application&#34;</span>
 
 <span class="n">apply</span> <span class="nl">from:</span> <span class="s2">&#34;../../node_modules/react-native/react.gradle&#34;</span>
 
@@ -240,12 +240,11 @@ local environment:</p>
 </ul>
 <p>From the root project directory (<em>not</em> the Android project directory), start the
 Metro bundler.</p>
-<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">$ npx react-native start
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">$ npx react-native start
 </code></pre></div><p>Then, start the Android component.</p>
-<div class="highlight"><pre class="chroma"><code class="language-shell" data-lang="shell">$ npx react-native run-android
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">$ npx react-native run-android
 </code></pre></div><p>You should then see the app load up in your emulator.</p>
-<figure>
-    <img src="/images/minimal_react_native_android_app.png"/> 
+<figure><img src="/images/minimal_react_native_android_app.png"/>
 </figure>
 
 <h2 id="where-to-go-from-here">Where to go from here</h2>
@@ -268,10 +267,10 @@ functionality with a continuous integration service.</p>
 instructions for the <a href="https://github.com/marketplace/actions/hugo-setup">hugo-setup</a> Action (<a href="https://github.com/peaceiris/actions-hugo/blob/d006b81d1845f59bb755a221aff0b61bbff15375/README.md">these</a> at the time of writing), we must
 then export the Org file as part of the workflow.  <a href="https://github.com/marketplace/actions/set-up-emacs">set-up-emacs</a> will install
 emacs and Org.  <a href="https://github.com/kaushalmodi/ox-hugo">ox-hugo</a> must be cloned separately.  Add a step to the job:</p>
-<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml">- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Clone Org-mode exporter</span><span class="w">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml">- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Clone Org-mode exporter</span><span class="w">
 </span><span class="w">  </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l">git clone https://github.com/kaushalmodi/ox-hugo.git ox-hugo</span><span class="w">
 </span></code></pre></div><p>Then add another step to call the export function:</p>
-<div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml">- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Export Org file to Markdown</span><span class="w">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml">- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Export Org file to Markdown</span><span class="w">
 </span><span class="w">  </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l">emacs ./posts.org --batch -L ./ox-hugo -l ox-hugo.el --eval=&#39;(org-hugo-export-wim-to-md t)&#39; --kill</span><span class="w">
 </span></code></pre></div><p>As written, we are assuming the Org file containing the posts is <code>posts.org</code> and
 located in the root of the repository.  All applicable subtrees are exported but
@@ -656,7 +655,7 @@ hard.</p>
 <p>One can chose to wait for their kingdom of heaven until their next job, or once
 they move to another country, or after they retire, or after they die.  Or they
 could build it here and now.  It&rsquo;s a choice.</p>
-]]></content></item><item><title>On Fundamentals</title><link>https://www.kwyse.com/posts/on-fundamentals/</link><pubDate>Wed, 28 Mar 2018 00:00:00 +0000</pubDate><guid>https://www.kwyse.com/posts/on-fundamentals/</guid><description>A recent vacation gave me time to catch up on my backlog of books. Stop Guessing, by Nat Greene, was my first target. It&amp;rsquo;s a book about the tendency to guess solutions when faced with hard problems, and instead proposes a rigorous, fact-backed and systematic approach to problem solving. There is a chapter dedicated to understanding the fundamentals of the problem space that was particularly poignant to me.
+]]></content></item><item><title>On Fundamentals</title><link>https://www.kwyse.com/posts/on-fundamentals/</link><pubDate>Wed, 28 Mar 2018 00:00:00 +0100</pubDate><guid>https://www.kwyse.com/posts/on-fundamentals/</guid><description>A recent vacation gave me time to catch up on my backlog of books. Stop Guessing, by Nat Greene, was my first target. It&amp;rsquo;s a book about the tendency to guess solutions when faced with hard problems, and instead proposes a rigorous, fact-backed and systematic approach to problem solving. There is a chapter dedicated to understanding the fundamentals of the problem space that was particularly poignant to me.
 If we define a hard problem as simply something that is resistant to guesses, impactful and yet hard to isolate and reproduce, then they&amp;rsquo;re not uncommon in the life of a software developer.</description><content type="html"><![CDATA[<p>A recent vacation gave me time to catch up on my backlog of books.  <a href="http://www.stopguessingbook.com/"><em>Stop
 Guessing</em></a>, by Nat Greene, was my first target. It&rsquo;s a book about the tendency to
 guess solutions when faced with hard problems, and instead proposes a rigorous,
@@ -957,8 +956,7 @@ lose 15 kilograms and that would give me about 15 weeks to do it. One kilogram
 of body fat is equivalent to 7700 calories, meaning I would need to have a daily
 calorie deficit of 1100 calories, so a daily calorie intake of 1300 calories on
 average.  If I had a perfect run, that is certainly possible to hit.</p>
-<figure>
-    <img src="/images/hackers_diet_five_months.png"/> 
+<figure><img src="/images/hackers_diet_five_months.png"/>
 </figure>
 
 <p>I didn&rsquo;t hit it, but I made a big dent. This is a plot of my progress.  The blue
@@ -1040,7 +1038,7 @@ great mapping is window reordering. I&rsquo;m surprised this isn&rsquo;t in more
 online because it&rsquo;s insanely good! I found it in <a href="https://superuser.com/a/552493">this answer on superuser</a>, but
 tweaked it so that it supports repeated keys and forces you to use the prefix
 key.</p>
-<pre><code class="language-tmux" data-lang="tmux">bind-key -r S-Left swap-window -t -
+<pre tabindex="0"><code class="language-tmux" data-lang="tmux">bind-key -r S-Left swap-window -t -
 bind-key -r S-Right swap-window -t +
 </code></pre><p>Otherwise I try to keep other mappings and remappings to a minimum. Many suggest
 to remap the window split commands, like remapping a horizontal split from
@@ -1178,19 +1176,19 @@ ideas on improvements. Maybe you&rsquo;ve noticed a few implemented since then =
 <h2 id="one-liner-improvements">One-liner improvements</h2>
 <p>Some of these were very simple to add. The theme I&rsquo;m using, <a href="https://minimo.netlify.com/">Minimo</a>, supports
 adding a reading time to posts with one addition to <code>config.toml</code>.</p>
-<pre><code class="language-nil" data-lang="nil">showReadingTime = true
+<pre tabindex="0"><code class="language-nil" data-lang="nil">showReadingTime = true
 </code></pre><p>It&rsquo;s a small addition yet adds noted value for the reader.</p>
 <p>The next change instead provides insight for the sight maintainer:</p>
-<pre><code class="language-nil" data-lang="nil">googleAnalytics = &quot;[your Google Analytics tracking ID]&quot;
+<pre tabindex="0"><code class="language-nil" data-lang="nil">googleAnalytics = &quot;[your Google Analytics tracking ID]&quot;
 </code></pre><p>Once your site starts getting some traffic, <a href="https://analytics.google.com/">Google Analytics</a> can help you create
 more targeted content.</p>
 <p>I&rsquo;ve also enabled my RSS feed to display the full contents of an article rather
 than just the summary. You can do that by overriding the default <code>rss.xml</code> file
 (add your own <code>layouts/_default/rss.xml</code> and it will take precedence) and
 changing</p>
-<pre><code class="language-nil" data-lang="nil">&lt;description&gt;{{ .Summary | html }}&lt;/description&gt;
+<pre tabindex="0"><code class="language-nil" data-lang="nil">&lt;description&gt;{{ .Summary | html }}&lt;/description&gt;
 </code></pre><p>to</p>
-<pre><code class="language-nil" data-lang="nil">&lt;description&gt;{{ .Content | html }}&lt;/description&gt;
+<pre tabindex="0"><code class="language-nil" data-lang="nil">&lt;description&gt;{{ .Content | html }}&lt;/description&gt;
 </code></pre><p>Kudos to Brian Wisti for his <a href="https://randomgeekery.org/2017/09/15/full-content-hugo-feeds/">post</a> on this technique.</p>
 <p>The final quick addition is taxonomies. I&rsquo;ve started a series called <em>This Week
 I Discovered</em> where, each week, I plan to discuss something cool I found in the
@@ -1199,11 +1197,11 @@ such a grouping a <a href="https://gohugo.io/content-management/taxonomies/"><em
 and <em>tags</em>, but we can easily add our own as well, such as a <em>series</em> taxonomy.</p>
 <p>Enabling a taxonomy requires the name of it to be included in at least one
 post&rsquo;s front matter:</p>
-<pre><code class="language-nil" data-lang="nil">series: [&quot;This Week I Discovered&quot;]
+<pre tabindex="0"><code class="language-nil" data-lang="nil">series: [&quot;This Week I Discovered&quot;]
 </code></pre><h2 id="somewhat-effortful-improvements">Somewhat effortful improvements</h2>
 <p>Adding a comments section could have been easy. Hugo supports <a href="https://disqus.com/">Disqus</a> comments
 out of the box. In your <code>config.toml</code>, simply add:</p>
-<pre><code class="language-nil" data-lang="nil">disqusShortname = &quot;[your Disqus short name]&quot;
+<pre tabindex="0"><code class="language-nil" data-lang="nil">disqusShortname = &quot;[your Disqus short name]&quot;
 </code></pre><p>I ended up going this route, but there are alternatives.  <a href="https://staticman.net/">Staticman</a>, for
 example, doesn&rsquo;t require the comments to be stored by a third-party. It&rsquo;s much
 more appropriate for a static-content site. Staticman listens for incoming
@@ -1232,7 +1230,7 @@ traffic to the TLS version of the site. Nginx, running inside my Nanobox, wasn&r
 playing nice with this setup. Then I took another look at the <a href="https://github.com/nanobox-io/nanobox-engine-static/blob/master/README.md">README</a> for the
 Nanobox static site engine and saw that forcing HTTPS was supported at this
 level!</p>
-<pre><code class="language-nil" data-lang="nil">force_https: true
+<pre tabindex="0"><code class="language-nil" data-lang="nil">force_https: true
 </code></pre><p>Well I felt silly, but now the whole site is TLS enabled and loading within a
 few hundred milliseconds. Much better than the ~75 seconds it was previously
 taking!</p>
@@ -1240,7 +1238,7 @@ taking!</p>
 automated deployments when pushing to GitHub. If you have a Travis CI account
 and continuous integration enabled for the repository, simply add a
 <code>.travis.yml</code> file with the following:</p>
-<pre><code class="language-nil" data-lang="nil">sudo: required
+<pre tabindex="0"><code class="language-nil" data-lang="nil">sudo: required
 install: sudo bash -c &quot;$(curl -fsSL https://s3.amazonaws.com/tools.nanobox.io/bootstrap/ci.sh)&quot;
 
 script:
@@ -1419,7 +1417,7 @@ management.</p>
 </ul>
 <p>First we declare out components. This includes a sprite component that wraps
 SDL2&rsquo;s <code>Rect</code> struct. SDL2 makes it easy to render =Rect=s to screen.</p>
-<div class="highlight"><pre class="chroma"><code class="language-rust" data-lang="rust"><span class="cp">#[derive(Component)]</span><span class="w">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="cp">#[derive(Component)]</span><span class="w">
 </span><span class="w"></span><span class="k">struct</span> <span class="nc">Position</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span><span class="w">    </span><span class="n">x</span>: <span class="kt">f64</span><span class="p">,</span><span class="w">
 </span><span class="w">    </span><span class="n">y</span>: <span class="kt">f64</span><span class="p">,</span><span class="w">
@@ -1436,13 +1434,13 @@ SDL2&rsquo;s <code>Rect</code> struct. SDL2 makes it easy to render =Rect=s to s
 </span><span class="w"></span><span class="k">struct</span> <span class="nc">Sprite</span><span class="p">(</span><span class="n">Rect</span><span class="p">);</span><span class="w">
 </span></code></pre></div><p>Then we declare out systems. The first one is to update the position of an
 entity given its velocity.</p>
-<div class="highlight"><pre class="chroma"><code class="language-rust" data-lang="rust"><span class="k">struct</span> <span class="nc">MovementSystem</span><span class="p">;</span><span class="w">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="k">struct</span> <span class="nc">MovementSystem</span><span class="p">;</span><span class="w">
 </span><span class="w">
-</span><span class="w"></span><span class="k">impl</span><span class="o">&lt;</span><span class="na">&#39;a</span><span class="o">&gt;</span><span class="w"> </span><span class="n">System</span><span class="o">&lt;</span><span class="na">&#39;a</span><span class="o">&gt;</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">MovementSystem</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span><span class="w"></span><span class="k">impl</span><span class="o">&lt;&#39;</span><span class="na">a</span><span class="o">&gt;</span><span class="w"> </span><span class="n">System</span><span class="o">&lt;&#39;</span><span class="na">a</span><span class="o">&gt;</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">MovementSystem</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span><span class="w">    </span><span class="k">type</span> <span class="nc">SystemData</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="w">
-</span><span class="w">	</span><span class="n">Fetch</span><span class="o">&lt;</span><span class="na">&#39;a</span><span class="p">,</span><span class="w"> </span><span class="n">Duration</span><span class="o">&gt;</span><span class="p">,</span><span class="w">
-</span><span class="w">	</span><span class="n">ReadStorage</span><span class="o">&lt;</span><span class="na">&#39;a</span><span class="p">,</span><span class="w"> </span><span class="n">Velocity</span><span class="o">&gt;</span><span class="p">,</span><span class="w">
-</span><span class="w">	</span><span class="n">WriteStorage</span><span class="o">&lt;</span><span class="na">&#39;a</span><span class="p">,</span><span class="w"> </span><span class="n">Position</span><span class="o">&gt;</span><span class="w">
+</span><span class="w">	</span><span class="n">Fetch</span><span class="o">&lt;&#39;</span><span class="na">a</span><span class="p">,</span><span class="w"> </span><span class="n">Duration</span><span class="o">&gt;</span><span class="p">,</span><span class="w">
+</span><span class="w">	</span><span class="n">ReadStorage</span><span class="o">&lt;&#39;</span><span class="na">a</span><span class="p">,</span><span class="w"> </span><span class="n">Velocity</span><span class="o">&gt;</span><span class="p">,</span><span class="w">
+</span><span class="w">	</span><span class="n">WriteStorage</span><span class="o">&lt;&#39;</span><span class="na">a</span><span class="p">,</span><span class="w"> </span><span class="n">Position</span><span class="o">&gt;</span><span class="w">
 </span><span class="w">    </span><span class="p">);</span><span class="w">
 </span><span class="w">
 </span><span class="w">    </span><span class="k">fn</span> <span class="nf">run</span><span class="p">(</span><span class="o">&amp;</span><span class="k">mut</span><span class="w"> </span><span class="bp">self</span><span class="p">,</span><span class="w"> </span><span class="n">data</span>: <span class="nc">Self</span>::<span class="n">SystemData</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -1465,10 +1463,10 @@ scale them like this!  <a href="https://gafferongames.com/post/integration%5Fbas
 happens.</p>
 <p>The other system we need converts logical world coordinates to screen
 coordinates.</p>
-<div class="highlight"><pre class="chroma"><code class="language-rust" data-lang="rust"><span class="k">struct</span> <span class="nc">RenderSystem</span><span class="p">;</span><span class="w">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="k">struct</span> <span class="nc">RenderSystem</span><span class="p">;</span><span class="w">
 </span><span class="w">
-</span><span class="w"></span><span class="k">impl</span><span class="o">&lt;</span><span class="na">&#39;a</span><span class="o">&gt;</span><span class="w"> </span><span class="n">System</span><span class="o">&lt;</span><span class="na">&#39;a</span><span class="o">&gt;</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">RenderSystem</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span><span class="w">    </span><span class="k">type</span> <span class="nc">SystemData</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">ReadStorage</span><span class="o">&lt;</span><span class="na">&#39;a</span><span class="p">,</span><span class="w"> </span><span class="n">Position</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="n">WriteStorage</span><span class="o">&lt;</span><span class="na">&#39;a</span><span class="p">,</span><span class="w"> </span><span class="n">Sprite</span><span class="o">&gt;</span><span class="p">);</span><span class="w">
+</span><span class="w"></span><span class="k">impl</span><span class="o">&lt;&#39;</span><span class="na">a</span><span class="o">&gt;</span><span class="w"> </span><span class="n">System</span><span class="o">&lt;&#39;</span><span class="na">a</span><span class="o">&gt;</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">RenderSystem</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span><span class="w">    </span><span class="k">type</span> <span class="nc">SystemData</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">ReadStorage</span><span class="o">&lt;&#39;</span><span class="na">a</span><span class="p">,</span><span class="w"> </span><span class="n">Position</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="n">WriteStorage</span><span class="o">&lt;&#39;</span><span class="na">a</span><span class="p">,</span><span class="w"> </span><span class="n">Sprite</span><span class="o">&gt;</span><span class="p">);</span><span class="w">
 </span><span class="w">
 </span><span class="w">    </span><span class="k">fn</span> <span class="nf">run</span><span class="p">(</span><span class="o">&amp;</span><span class="k">mut</span><span class="w"> </span><span class="bp">self</span><span class="p">,</span><span class="w"> </span><span class="n">data</span>: <span class="nc">Self</span>::<span class="n">SystemData</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
 </span><span class="w">	</span><span class="kd">let</span><span class="w"> </span><span class="p">(</span><span class="n">positions</span><span class="p">,</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">sprites</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">data</span><span class="p">;</span><span class="w">
@@ -1485,7 +1483,7 @@ by a constant factor to get screen coordinates, which is used by our sprite for
 rendering.</p>
 <p>Almost there. We now need to hook this all up to the <code>World</code>, which manages the
 entities.</p>
-<div class="highlight"><pre class="chroma"><code class="language-rust" data-lang="rust"><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">world</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">World</span>::<span class="n">new</span><span class="p">();</span><span class="w">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">world</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">World</span>::<span class="n">new</span><span class="p">();</span><span class="w">
 </span><span class="w"></span><span class="n">world</span><span class="p">.</span><span class="n">add_resource</span><span class="p">(</span><span class="n">Duration</span>::<span class="n">new</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">));</span><span class="w">
 </span><span class="w"></span><span class="n">world</span><span class="p">.</span><span class="n">register</span>::<span class="o">&lt;</span><span class="n">Position</span><span class="o">&gt;</span><span class="p">();</span><span class="w">
 </span><span class="w"></span><span class="n">world</span><span class="p">.</span><span class="n">register</span>::<span class="o">&lt;</span><span class="n">Velocity</span><span class="o">&gt;</span><span class="p">();</span><span class="w">
@@ -1510,7 +1508,7 @@ entities.</p>
 </span><span class="w">    </span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="n">RenderSystem</span><span class="p">,</span><span class="w"> </span><span class="s">&#34;render_system&#34;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="p">[</span><span class="s">&#34;movement_system&#34;</span><span class="p">])</span><span class="w">
 </span><span class="w">    </span><span class="p">.</span><span class="n">build</span><span class="p">();</span><span class="w">
 </span></code></pre></div><p>It&rsquo;s then just one line to update all of our entities.</p>
-<div class="highlight"><pre class="chroma"><code class="language-rust" data-lang="rust"><span class="n">dispatcher</span><span class="p">.</span><span class="n">dispatch</span><span class="p">(</span><span class="o">&amp;</span><span class="k">mut</span><span class="w"> </span><span class="n">world</span><span class="p">.</span><span class="n">res</span><span class="p">);</span><span class="w">
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="n">dispatcher</span><span class="p">.</span><span class="n">dispatch</span><span class="p">(</span><span class="o">&amp;</span><span class="k">mut</span><span class="w"> </span><span class="n">world</span><span class="p">.</span><span class="n">res</span><span class="p">);</span><span class="w">
 </span></code></pre></div><p>Of course, we need some additional infrastructure around this. The above line
 should belong in the application run loop. That loop should also contain input
 handling and rendering to a hardware context.</p>
@@ -1528,8 +1526,7 @@ job explaining the various approaches.</p>
 <p>The above includes the simplest kind of run loop with a fixed time step of
 1/60th of a second. The results are hopefully a white square moving across a
 black abyss.</p>
-<figure>
-    <img src="/images/grokking_ecs_result.gif"/> 
+<figure><img src="/images/grokking_ecs_result.gif"/>
 </figure>
 
 <p>There are many ways to improve this. You could use a more sophisticated run loop
@@ -1621,7 +1618,7 @@ accommodated that, so let&rsquo;s begin.</p>
 <h2 id="building-the-basics">Building the basics</h2>
 <p>Hugo already has a great <a href="https://gohugo.io/getting-started/quick-start/">quick start</a> guide that we&rsquo;ll follow to begin with.</p>
 <p>First install Hugo with your package manager of choice.</p>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh"><span class="c1"># OS X buddies</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="c1"># OS X buddies</span>
 $ brew install hugo
 
 <span class="c1"># Arch compatriots</span>
@@ -1633,11 +1630,11 @@ $ sudo emerge --ask www-apps/hugo
 </code></pre></div><p>Let&rsquo;s create a skeleton site and add a theme. You can browse available themes
 <a href="https://themes.gohugo.io/">here</a>. I&rsquo;ll be using the
 <a href="https://minimo.netlify.com/">Minimo</a> theme.</p>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">$ hugo new site wild-baguette $ <span class="nb">cd</span> wild-baguette $ git init $ git
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">$ hugo new site wild-baguette $ <span class="nb">cd</span> wild-baguette $ git init $ git
 submodule add https://github.com/MunifTanjim/minimo themes/minimo
 </code></pre></div><p>This is <em>all</em> you need for a basic site without any content (yet). Let&rsquo;s pause
 here and check out the folder structure.</p>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">$ tree -I minimo <span class="c1"># ignore the theme directory</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">$ tree -I minimo <span class="c1"># ignore the theme directory</span>
 .
 ├── archetypes
 │   └── default.md
@@ -1656,11 +1653,11 @@ comprehensive configuration <a href="https://themes.gohugo.io/theme/minimo/docs/
 starting the server.</p>
 <p>Fire up the Hugo server and navigate to the URL displayed in the output.  You
 should see something beautiful. If not, ensure your configuration is correct.</p>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">$ hugo server
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">$ hugo server
 </code></pre></div><h2 id="adding-content-and-customising">Adding content and customising</h2>
 <p>What good are wild baguettes if you can&rsquo;t find them? Being good citizens, we&rsquo;ll
 share our knowledge on their habitats in our first blog post.</p>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">$ hugo new posts/where_to_find_them.md
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">$ hugo new posts/where_to_find_them.md
 </code></pre></div><p>The <code>posts</code> directory will be nested under <code>contents</code> in the project root. Fill
 this file with whatever pleases you. The important thing is the front
 matter. That&rsquo;s the bit in the <code>---</code> block at the top of the file. By default,
@@ -1672,7 +1669,7 @@ wish to provide. The default archetype suffices for a simple blog.</p>
 <p>Nesting the new post under the <code>posts</code> directory will also nest it in the URL.
 With that in mind, it makes sense to have a <code>posts</code> page on the site. We need to
 create a new file for that.</p>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">$ <span class="nb">echo</span> <span class="s1">&#39;---\ntitle: Posts\n---&#39;</span> &gt; content/posts/_index.md
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">$ <span class="nb">echo</span> <span class="s1">&#39;---\ntitle: Posts\n---&#39;</span> &gt; content/posts/_index.md
 </code></pre></div><p>Each <a href="https://gohugo.io/content-management/sections/">section</a>, or distinct part of our site, can contain a <code>_index.md</code> file that
 represents the section itself rather than its children, like posts do.  The
 value we give to <code>title</code> here will be what&rsquo;s shown on the section page and in
@@ -1682,7 +1679,7 @@ could be different for your chosen theme. For Minimo, it is <code>main</code>.</
 <p>Start the server again and see our new navigation menu and post rendered. The
 <code>-D</code> flag here indicates we want to render draft posts in addition to regular
 ones.</p>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">$ hugo server -D
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">$ hugo server -D
 </code></pre></div><p>Let&rsquo;s personalise the theme a bit. Minimo gives you a very easy way to override
 the CSS with the <code>customCSS</code> key in <code>config.toml</code>. You can read about a specific
 use case <a href="https://discourse.gohugo.io/t/minimo-css-customization/7173/4">here</a>, where the accent colour is changed.</p>
@@ -1719,7 +1716,7 @@ us to tell it how to run our Hugo project: <a href="https://github.com/kwyse/per
 what commands to run, and <a href="https://github.com/kwyse/personal-website/blob/65791863bff9abfd4c6e430ca38d601c90d9b61c/install.sh"><code>install.sh</code></a>, which is called by <code>boxfile.yml</code> and
 actually installs Hugo inside the container. Add these files to your project,
 then tell Nanobox to deploy!</p>
-<div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">$ nanobox remote add &lt;nanobox-app-name&gt; $ nanobox deploy
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">$ nanobox remote add &lt;nanobox-app-name&gt; $ nanobox deploy
 </code></pre></div><p>Visit your Nanobox portal and find a link that takes you to the deployed site!
 Too easy!</p>
 <p>The next logical step is to set up a domain name for your site. I use <a href="https://www.namecheap.com/">NameCheap</a>
