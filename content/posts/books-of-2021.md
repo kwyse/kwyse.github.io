@@ -5,7 +5,7 @@ date = 2021-12-30
 publishDate = 2021-12-30T20:00:00+00:00
 tags = ["books"]
 categories = ["reading"]
-draft = true
+draft = false
 +++
 
 I complete this year self-isolating after catching a very flu-like Coronavirus infection. A foggy head tries to impede me from writing an article I've wanted to write since last year this time: a review of the books I've read. My reading lapsed in 2020, but this year saw it back on track. Here is what I've learned from it over the last two years.
