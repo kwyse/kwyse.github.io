@@ -1,8 +1,8 @@
 +++
 title = "Three Maxims"
 author = ["Krishan Wyse"]
-date = 2022-01-06
-publishDate = 2022-01-06T20:00:00+00:00
+date = 2022-01-08
+publishDate = 2022-01-08T12:30:00+00:00
 draft = false
 +++
 
