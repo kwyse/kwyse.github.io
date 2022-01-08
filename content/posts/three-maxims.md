@@ -10,7 +10,7 @@ My workout routine for some months consists of eight circuits. Situated on the w
 
 > I accept the day as it comes. I am not pressured to be happy or sad. I need not pass judgement on anything.
 
-And below that are three maxims that I use to guide me. They encompass what I believe it means to live well. As alluded to in my [last post](/posts/books-of-2021#meditations), some of those books left me with a changed mental model, and this has been their most lasting impact.
+And below that are three maxims that I use to guide me. They encompass what I believe it means to live well. As [alluded to](/posts/books-of-2021#meditations) in my last post, some of those books left me with a changed mental model, and this has been their most lasting impact.
 
 ## Be present
 
