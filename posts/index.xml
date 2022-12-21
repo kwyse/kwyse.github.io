@@ -100,39 +100,39 @@ itself is just four files:</p>
 </ul>
 <p>Starting with <code>package.json</code>, since that manages the packages, include React and
 React Native, and with appropriate versions:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
-  <span class="nt">&#34;dependencies&#34;</span><span class="p">:</span> <span class="p">{</span>
-    <span class="nt">&#34;react&#34;</span><span class="p">:</span> <span class="s2">&#34;16.11&#34;</span><span class="p">,</span>
-    <span class="nt">&#34;react-native&#34;</span><span class="p">:</span> <span class="s2">&#34;0.62&#34;</span>
-  <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div><p>The two files above it are necessary just to get things working.  <code>index.js</code>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;dependencies&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;react&#34;</span><span class="p">:</span> <span class="s2">&#34;16.11&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;react-native&#34;</span><span class="p">:</span> <span class="s2">&#34;0.62&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>The two files above it are necessary just to get things working.  <code>index.js</code>
 must register the application:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kr">import</span> <span class="p">{</span> <span class="nx">AppRegistry</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;react-native&#39;</span><span class="p">;</span>
-<span class="kr">import</span> <span class="nx">App</span> <span class="nx">from</span> <span class="s1">&#39;./App&#39;</span><span class="p">;</span>
-<span class="kr">import</span> <span class="p">{</span> <span class="nx">name</span> <span class="nx">as</span> <span class="nx">appName</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;./app.json&#39;</span><span class="p">;</span>
-
-<span class="nx">AppRegistry</span><span class="p">.</span><span class="nx">registerComponent</span><span class="p">(</span><span class="nx">appName</span><span class="p">,</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="nx">App</span><span class="p">);</span>
-</code></pre></div><p><code>app.json</code> need only include the name of the application:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
-  <span class="nt">&#34;name&#34;</span><span class="p">:</span> <span class="s2">&#34;MyMinimalApp&#34;</span>
-<span class="p">}</span>
-</code></pre></div><p>The final file is the interesting one.  This is where the layout logic lives.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="kr">import</span> <span class="nx">React</span> <span class="nx">from</span> <span class="s1">&#39;react&#39;</span><span class="p">;</span>
-<span class="kr">import</span> <span class="p">{</span> <span class="nx">Text</span><span class="p">,</span> <span class="nx">View</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;react-native&#39;</span><span class="p">;</span>
-
-<span class="kr">export</span> <span class="k">default</span> <span class="kd">function</span> <span class="nx">App</span><span class="p">()</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="p">(</span>
-    <span class="p">&lt;</span><span class="nt">View</span> <span class="na">style</span><span class="o">=</span><span class="p">{{</span>
-	<span class="nx">flex</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-	<span class="nx">alignItems</span><span class="o">:</span> <span class="s1">&#39;center&#39;</span><span class="p">,</span>
-	<span class="nx">justifyContent</span><span class="o">:</span> <span class="s1">&#39;center&#39;</span>
-    <span class="p">}}&gt;</span>
-      <span class="p">&lt;</span><span class="nt">Text</span><span class="p">&gt;</span><span class="nx">Hello</span><span class="p">,</span> <span class="nx">world</span><span class="o">!</span><span class="p">&lt;/</span><span class="nt">Text</span><span class="p">&gt;</span>
-    <span class="p">&lt;/</span><span class="nt">View</span><span class="p">&gt;</span>
-  <span class="p">);</span>
-<span class="p">}</span>
-</code></pre></div><p>If you&rsquo;re curious about the odd HTML-like syntax, that&rsquo;s <a href="https://reactjs.org/docs/jsx-in-depth.html">JSX</a>. JSX simply
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">AppRegistry</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;react-native&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="nx">App</span> <span class="nx">from</span> <span class="s1">&#39;./App&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">name</span> <span class="nx">as</span> <span class="nx">appName</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;./app.json&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">AppRegistry</span><span class="p">.</span><span class="nx">registerComponent</span><span class="p">(</span><span class="nx">appName</span><span class="p">,</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="nx">App</span><span class="p">);</span>
+</span></span></code></pre></div><p><code>app.json</code> need only include the name of the application:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&#34;name&#34;</span><span class="p">:</span> <span class="s2">&#34;MyMinimalApp&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>The final file is the interesting one.  This is where the layout logic lives.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-jsx" data-lang="jsx"><span class="line"><span class="cl"><span class="kr">import</span> <span class="nx">React</span> <span class="nx">from</span> <span class="s1">&#39;react&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="kr">import</span> <span class="p">{</span> <span class="nx">Text</span><span class="p">,</span> <span class="nx">View</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;react-native&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kr">export</span> <span class="k">default</span> <span class="kd">function</span> <span class="nx">App</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">View</span> <span class="na">style</span><span class="o">=</span><span class="p">{{</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">flex</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">alignItems</span><span class="o">:</span> <span class="s1">&#39;center&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">justifyContent</span><span class="o">:</span> <span class="s1">&#39;center&#39;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}}&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;</span><span class="nt">Text</span><span class="p">&gt;</span><span class="nx">Hello</span><span class="p">,</span> <span class="nx">world</span><span class="o">!</span><span class="p">&lt;/</span><span class="nt">Text</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">View</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>If you&rsquo;re curious about the odd HTML-like syntax, that&rsquo;s <a href="https://reactjs.org/docs/jsx-in-depth.html">JSX</a>. JSX simply
 provides syntactic sugar to covert those tags into Javascript functions.  If
 you&rsquo;re curious about the meanings of the tags themselves, check out the <a href="https://reactnative.dev/docs/components-and-apis">API
 docs</a>.</p>
@@ -163,151 +163,151 @@ executed without installation on the local machine.</p>
 <li><code>app/build.gradle</code></li>
 </ul>
 <p>The first Java class, <code>MainActivity</code>, has little boilerplate needed.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">com.myminimalapp</span><span class="o">;</span>
-
-<span class="kn">import</span> <span class="nn">com.facebook.react.ReactActivity</span><span class="o">;</span>
-
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">MainActivity</span> <span class="kd">extends</span> <span class="n">ReactActivity</span> <span class="o">{</span>
-    <span class="nd">@Override</span>
-    <span class="kd">protected</span> <span class="n">String</span> <span class="nf">getMainComponentName</span><span class="o">()</span> <span class="o">{</span>
-	<span class="k">return</span> <span class="s">&#34;MyMinimalApp&#34;</span><span class="o">;</span>
-    <span class="o">}</span>
-<span class="o">}</span>
-</code></pre></div><p>The name of the main component of the application must be stated so that React
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">package</span> <span class="nn">com.myminimalapp</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">com.facebook.react.ReactActivity</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">MainActivity</span> <span class="kd">extends</span> <span class="n">ReactActivity</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nd">@Override</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">protected</span> <span class="n">String</span> <span class="nf">getMainComponentName</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="s">&#34;MyMinimalApp&#34;</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></div><p>The name of the main component of the application must be stated so that React
 Native knows which component it must render.</p>
 <p>The second Java file, <code>MainApplication</code>, must implement the one method of
 <code>ReactApplication</code>.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">com.myminimalapp</span><span class="o">;</span>
-
-<span class="kn">import</span> <span class="nn">android.app.Application</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">com.facebook.react.PackageList</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">com.facebook.react.ReactApplication</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">com.facebook.react.ReactNativeHost</span><span class="o">;</span>
-<span class="kn">import</span> <span class="nn">com.facebook.react.ReactPackage</span><span class="o">;</span>
-
-<span class="kn">import</span> <span class="nn">java.util.List</span><span class="o">;</span>
-
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">MainApplication</span> <span class="kd">extends</span> <span class="n">Application</span> <span class="kd">implements</span> <span class="n">ReactApplication</span> <span class="o">{</span>
-    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="n">ReactNativeHost</span> <span class="nf">getReactNativeHost</span><span class="o">()</span> <span class="o">{</span>
-	<span class="k">return</span> <span class="k">new</span> <span class="n">ReactNativeHost</span><span class="o">(</span><span class="k">this</span><span class="o">)</span> <span class="o">{</span>
-	    <span class="nd">@Override</span>
-	    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">getUseDeveloperSupport</span><span class="o">()</span> <span class="o">{</span>
-		<span class="k">return</span> <span class="n">BuildConfig</span><span class="o">.</span><span class="na">DEBUG</span><span class="o">;</span>
-	    <span class="o">}</span>
-
-	    <span class="nd">@Override</span>
-	    <span class="kd">protected</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">ReactPackage</span><span class="o">&gt;</span> <span class="nf">getPackages</span><span class="o">()</span> <span class="o">{</span>
-		<span class="k">return</span> <span class="k">new</span> <span class="n">PackageList</span><span class="o">(</span><span class="k">this</span><span class="o">).</span><span class="na">getPackages</span><span class="o">();</span>
-	    <span class="o">}</span>
-
-	    <span class="nd">@Override</span>
-	    <span class="kd">protected</span> <span class="n">String</span> <span class="nf">getJSMainModuleName</span><span class="o">()</span> <span class="o">{</span>
-		<span class="k">return</span> <span class="s">&#34;index&#34;</span><span class="o">;</span>
-	    <span class="o">}</span>
-	<span class="o">};</span>
-    <span class="o">}</span>
-<span class="o">}</span>
-</code></pre></div><p><code>ReactNativeHost</code> has two abstract methods that must be implemented.  The final
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kn">package</span> <span class="nn">com.myminimalapp</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">android.app.Application</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">com.facebook.react.PackageList</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">com.facebook.react.ReactApplication</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">com.facebook.react.ReactNativeHost</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">com.facebook.react.ReactPackage</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">java.util.List</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">MainApplication</span> <span class="kd">extends</span> <span class="n">Application</span> <span class="kd">implements</span> <span class="n">ReactApplication</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nd">@Override</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">public</span> <span class="n">ReactNativeHost</span> <span class="nf">getReactNativeHost</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">	<span class="k">return</span> <span class="k">new</span> <span class="n">ReactNativeHost</span><span class="o">(</span><span class="k">this</span><span class="o">)</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">	    <span class="nd">@Override</span>
+</span></span><span class="line"><span class="cl">	    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">getUseDeveloperSupport</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">		<span class="k">return</span> <span class="n">BuildConfig</span><span class="o">.</span><span class="na">DEBUG</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">	    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	    <span class="nd">@Override</span>
+</span></span><span class="line"><span class="cl">	    <span class="kd">protected</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">ReactPackage</span><span class="o">&gt;</span> <span class="nf">getPackages</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">		<span class="k">return</span> <span class="k">new</span> <span class="n">PackageList</span><span class="o">(</span><span class="k">this</span><span class="o">).</span><span class="na">getPackages</span><span class="o">();</span>
+</span></span><span class="line"><span class="cl">	    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	    <span class="nd">@Override</span>
+</span></span><span class="line"><span class="cl">	    <span class="kd">protected</span> <span class="n">String</span> <span class="nf">getJSMainModuleName</span><span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">		<span class="k">return</span> <span class="s">&#34;index&#34;</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl">	    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">	<span class="o">};</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></div><p><code>ReactNativeHost</code> has two abstract methods that must be implemented.  The final
 method, <code>getJSMainModuleName()</code>, must be overridden so that the correct
 Javascript file is executed on startup.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="nt">&lt;manifest</span> <span class="na">xmlns:android=</span><span class="s">&#34;http://schemas.android.com/apk/res/android&#34;</span>
-    <span class="na">package=</span><span class="s">&#34;com.myminimalapp&#34;</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;uses-permission</span> <span class="na">android:name=</span><span class="s">&#34;android.permission.INTERNET&#34;</span> <span class="nt">/&gt;</span>
-  <span class="nt">&lt;application</span>
-    <span class="na">android:name=</span><span class="s">&#34;.MainApplication&#34;</span>
-    <span class="na">android:usesCleartextTraffic=</span><span class="s">&#34;true&#34;</span>
-    <span class="na">android:theme=</span><span class="s">&#34;@style/AppTheme&#34;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;activity</span>
-      <span class="na">android:name=</span><span class="s">&#34;.MainActivity&#34;</span>
-      <span class="na">android:windowSoftInputMode=</span><span class="s">&#34;adjustResize&#34;</span><span class="nt">&gt;</span>
-      <span class="nt">&lt;intent-filter&gt;</span>
-	<span class="nt">&lt;action</span> <span class="na">android:name=</span><span class="s">&#34;android.intent.action.MAIN&#34;</span> <span class="nt">/&gt;</span>
-      <span class="nt">&lt;/intent-filter&gt;</span>
-    <span class="nt">&lt;/activity&gt;</span>
-  <span class="nt">&lt;/application&gt;</span>
-<span class="nt">&lt;/manifest&gt;</span>
-</code></pre></div><p><code>AndroidManifest.xml</code> points to our <code>MainActivity</code> and <code>MainApplication</code>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="nt">&lt;manifest</span> <span class="na">xmlns:android=</span><span class="s">&#34;http://schemas.android.com/apk/res/android&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="na">package=</span><span class="s">&#34;com.myminimalapp&#34;</span><span class="nt">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;uses-permission</span> <span class="na">android:name=</span><span class="s">&#34;android.permission.INTERNET&#34;</span> <span class="nt">/&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;application</span>
+</span></span><span class="line"><span class="cl">    <span class="na">android:name=</span><span class="s">&#34;.MainApplication&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="na">android:usesCleartextTraffic=</span><span class="s">&#34;true&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="na">android:theme=</span><span class="s">&#34;@style/AppTheme&#34;</span><span class="nt">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;activity</span>
+</span></span><span class="line"><span class="cl">      <span class="na">android:name=</span><span class="s">&#34;.MainActivity&#34;</span>
+</span></span><span class="line"><span class="cl">      <span class="na">android:windowSoftInputMode=</span><span class="s">&#34;adjustResize&#34;</span><span class="nt">&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&lt;intent-filter&gt;</span>
+</span></span><span class="line"><span class="cl">	<span class="nt">&lt;action</span> <span class="na">android:name=</span><span class="s">&#34;android.intent.action.MAIN&#34;</span> <span class="nt">/&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&lt;/intent-filter&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;/activity&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;/application&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/manifest&gt;</span>
+</span></span></code></pre></div><p><code>AndroidManifest.xml</code> points to our <code>MainActivity</code> and <code>MainApplication</code>
 classes, sets the app theme, declares necessary permissions, and specifies the
 core behaviour on startup.  <code>android:usesCleartextTraffic</code> is necessary
 <a href="https://stackoverflow.com/a/56808180">starting from Android API level 28</a>.</p>
 <p>The app theme is declared in <code>styles.xml</code>.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="nt">&lt;resources&gt;</span>
-  <span class="nt">&lt;style</span> <span class="na">name=</span><span class="s">&#34;AppTheme&#34;</span> <span class="na">parent=</span><span class="s">&#34;Theme.AppCompat.Light.NoActionBar&#34;</span><span class="nt">&gt;&lt;/style&gt;</span>
-<span class="nt">&lt;/resources&gt;</span>
-</code></pre></div><p>With that, the final step is to flesh our the build system.  <code>gradlew</code> is a
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="nt">&lt;resources&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="nt">&lt;style</span> <span class="na">name=</span><span class="s">&#34;AppTheme&#34;</span> <span class="na">parent=</span><span class="s">&#34;Theme.AppCompat.Light.NoActionBar&#34;</span><span class="nt">&gt;&lt;/style&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/resources&gt;</span>
+</span></span></code></pre></div><p>With that, the final step is to flesh our the build system.  <code>gradlew</code> is a
 file generated by invoking Gradle inside the project.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">$ gradle wrapper
-</code></pre></div><p>This will also generate a <code>gradlew.bat</code> executable for use on Windows.
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">$ gradle wrapper
+</span></span></code></pre></div><p>This will also generate a <code>gradlew.bat</code> executable for use on Windows.
 <code>settings.gradle</code> declares the nested <code>app</code> project inside the Android project.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-groovy" data-lang="groovy"><span class="n">include</span> <span class="s1">&#39;:app&#39;</span>
-</code></pre></div><p>The two <code>build.gradle</code> files are all that&rsquo;s left.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-groovy" data-lang="groovy"><span class="n">buildscript</span> <span class="o">{</span>
-    <span class="n">ext</span> <span class="o">{</span>
-	<span class="n">buildToolsVersion</span> <span class="o">=</span> <span class="s2">&#34;28.0.3&#34;</span>
-	<span class="n">minSdkVersion</span> <span class="o">=</span> <span class="mi">16</span>
-	<span class="n">compileSdkVersion</span> <span class="o">=</span> <span class="mi">28</span>
-	<span class="n">targetSdkVersion</span> <span class="o">=</span> <span class="mi">28</span>
-    <span class="o">}</span>
-
-    <span class="n">repositories</span> <span class="o">{</span>
-	<span class="n">google</span><span class="o">()</span>
-	<span class="n">jcenter</span><span class="o">()</span>
-    <span class="o">}</span>
-
-    <span class="n">dependencies</span> <span class="o">{</span>
-	<span class="n">classpath</span><span class="o">(</span><span class="s2">&#34;com.android.tools.build:gradle:3.5.2&#34;</span><span class="o">)</span>
-    <span class="o">}</span>
-<span class="o">}</span>
-
-<span class="n">allprojects</span> <span class="o">{</span>
-    <span class="n">repositories</span> <span class="o">{</span>
-	<span class="n">mavenLocal</span><span class="o">()</span>
-
-	<span class="n">maven</span> <span class="o">{</span>
-	    <span class="n">url</span><span class="o">(</span><span class="s2">&#34;$rootDir/../node_modules/react-native/android&#34;</span><span class="o">)</span>
-	<span class="o">}</span>
-
-	<span class="n">maven</span> <span class="o">{</span>
-	    <span class="n">url</span><span class="o">(</span><span class="s2">&#34;$rootDir/../node_modules/jsc-android/dist&#34;</span><span class="o">)</span>
-	<span class="o">}</span>
-
-	<span class="n">google</span><span class="o">()</span>
-	<span class="n">jcenter</span><span class="o">()</span>
-    <span class="o">}</span>
-<span class="o">}</span>
-</code></pre></div><p>This is the root <code>build.gradle</code> file.  It declares the Android API versions to
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-groovy" data-lang="groovy"><span class="line"><span class="cl"><span class="n">include</span> <span class="s1">&#39;:app&#39;</span>
+</span></span></code></pre></div><p>The two <code>build.gradle</code> files are all that&rsquo;s left.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-groovy" data-lang="groovy"><span class="line"><span class="cl"><span class="n">buildscript</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">ext</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">	<span class="n">buildToolsVersion</span> <span class="o">=</span> <span class="s2">&#34;28.0.3&#34;</span>
+</span></span><span class="line"><span class="cl">	<span class="n">minSdkVersion</span> <span class="o">=</span> <span class="mi">16</span>
+</span></span><span class="line"><span class="cl">	<span class="n">compileSdkVersion</span> <span class="o">=</span> <span class="mi">28</span>
+</span></span><span class="line"><span class="cl">	<span class="n">targetSdkVersion</span> <span class="o">=</span> <span class="mi">28</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">repositories</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">	<span class="n">google</span><span class="o">()</span>
+</span></span><span class="line"><span class="cl">	<span class="n">jcenter</span><span class="o">()</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">dependencies</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">	<span class="n">classpath</span><span class="o">(</span><span class="s2">&#34;com.android.tools.build:gradle:3.5.2&#34;</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">allprojects</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">repositories</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">	<span class="n">mavenLocal</span><span class="o">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="n">maven</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">	    <span class="n">url</span><span class="o">(</span><span class="s2">&#34;$rootDir/../node_modules/react-native/android&#34;</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">	<span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="n">maven</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">	    <span class="n">url</span><span class="o">(</span><span class="s2">&#34;$rootDir/../node_modules/jsc-android/dist&#34;</span><span class="o">)</span>
+</span></span><span class="line"><span class="cl">	<span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="n">google</span><span class="o">()</span>
+</span></span><span class="line"><span class="cl">	<span class="n">jcenter</span><span class="o">()</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></div><p>This is the root <code>build.gradle</code> file.  It declares the Android API versions to
 use and necessary dependencies.</p>
 <p>The one inside <code>app</code> is more complex.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-groovy" data-lang="groovy"><span class="n">apply</span> <span class="nl">plugin:</span> <span class="s2">&#34;com.android.application&#34;</span>
-
-<span class="n">apply</span> <span class="nl">from:</span> <span class="s2">&#34;../../node_modules/react-native/react.gradle&#34;</span>
-
-<span class="n">android</span> <span class="o">{</span>
-    <span class="n">compileSdkVersion</span> <span class="n">rootProject</span><span class="o">.</span><span class="na">ext</span><span class="o">.</span><span class="na">compileSdkVersion</span>
-
-    <span class="n">compileOptions</span> <span class="o">{</span>
-	<span class="n">sourceCompatibility</span> <span class="n">JavaVersion</span><span class="o">.</span><span class="na">VERSION_1_8</span>
-	<span class="n">targetCompatibility</span> <span class="n">JavaVersion</span><span class="o">.</span><span class="na">VERSION_1_8</span>
-    <span class="o">}</span>
-
-    <span class="n">defaultConfig</span> <span class="o">{</span>
-	<span class="n">applicationId</span> <span class="s2">&#34;com.myminimalapp&#34;</span>
-	<span class="n">minSdkVersion</span> <span class="n">rootProject</span><span class="o">.</span><span class="na">ext</span><span class="o">.</span><span class="na">minSdkVersion</span>
-	<span class="n">targetSdkVersion</span> <span class="n">rootProject</span><span class="o">.</span><span class="na">ext</span><span class="o">.</span><span class="na">targetSdkVersion</span>
-	<span class="n">versionCode</span> <span class="mi">1</span>
-	<span class="n">versionName</span> <span class="s2">&#34;1.0&#34;</span>
-    <span class="o">}</span>
-<span class="o">}</span>
-
-<span class="n">dependencies</span> <span class="o">{</span>
-    <span class="n">implementation</span> <span class="nf">fileTree</span><span class="o">(</span><span class="nl">dir:</span> <span class="s2">&#34;libs&#34;</span><span class="o">,</span> <span class="nl">include:</span> <span class="o">[</span><span class="s2">&#34;*.jar&#34;</span><span class="o">])</span>
-    <span class="n">implementation</span> <span class="s2">&#34;com.facebook.react:react-native:+&#34;</span>
-    <span class="n">implementation</span> <span class="s2">&#34;org.webkit:android-jsc:+&#34;</span>
-<span class="o">}</span>
-
-<span class="n">apply</span> <span class="nl">from:</span> <span class="n">file</span><span class="o">(</span><span class="s2">&#34;../../node_modules/@react-native-community/cli-platform-android/native_modules.gradle&#34;</span><span class="o">);</span> <span class="n">applyNativeModulesAppBuildGradle</span><span class="o">(</span><span class="n">project</span><span class="o">)</span>
-</code></pre></div><p>Where we can, we import the values used in the root <code>build.gradle</code> file.
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-groovy" data-lang="groovy"><span class="line"><span class="cl"><span class="n">apply</span> <span class="nl">plugin:</span> <span class="s2">&#34;com.android.application&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">apply</span> <span class="nl">from:</span> <span class="s2">&#34;../../node_modules/react-native/react.gradle&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">android</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">compileSdkVersion</span> <span class="n">rootProject</span><span class="o">.</span><span class="na">ext</span><span class="o">.</span><span class="na">compileSdkVersion</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">compileOptions</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">	<span class="n">sourceCompatibility</span> <span class="n">JavaVersion</span><span class="o">.</span><span class="na">VERSION_1_8</span>
+</span></span><span class="line"><span class="cl">	<span class="n">targetCompatibility</span> <span class="n">JavaVersion</span><span class="o">.</span><span class="na">VERSION_1_8</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">defaultConfig</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">	<span class="n">applicationId</span> <span class="s2">&#34;com.myminimalapp&#34;</span>
+</span></span><span class="line"><span class="cl">	<span class="n">minSdkVersion</span> <span class="n">rootProject</span><span class="o">.</span><span class="na">ext</span><span class="o">.</span><span class="na">minSdkVersion</span>
+</span></span><span class="line"><span class="cl">	<span class="n">targetSdkVersion</span> <span class="n">rootProject</span><span class="o">.</span><span class="na">ext</span><span class="o">.</span><span class="na">targetSdkVersion</span>
+</span></span><span class="line"><span class="cl">	<span class="n">versionCode</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">	<span class="n">versionName</span> <span class="s2">&#34;1.0&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">}</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">dependencies</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">implementation</span> <span class="nf">fileTree</span><span class="o">(</span><span class="nl">dir:</span> <span class="s2">&#34;libs&#34;</span><span class="o">,</span> <span class="nl">include:</span> <span class="o">[</span><span class="s2">&#34;*.jar&#34;</span><span class="o">])</span>
+</span></span><span class="line"><span class="cl">    <span class="n">implementation</span> <span class="s2">&#34;com.facebook.react:react-native:+&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">implementation</span> <span class="s2">&#34;org.webkit:android-jsc:+&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">apply</span> <span class="nl">from:</span> <span class="n">file</span><span class="o">(</span><span class="s2">&#34;../../node_modules/@react-native-community/cli-platform-android/native_modules.gradle&#34;</span><span class="o">);</span> <span class="n">applyNativeModulesAppBuildGradle</span><span class="o">(</span><span class="n">project</span><span class="o">)</span>
+</span></span></code></pre></div><p>Where we can, we import the values used in the root <code>build.gradle</code> file.
 Otherwise, this file is again about declaring dependencies.</p>
 <h2 id="running-the-app">Running the app</h2>
 <p>Before you can see this app running on an emulator, you&rsquo;ll need to set up your
@@ -318,10 +318,10 @@ local environment:</p>
 </ul>
 <p>From the root project directory (<em>not</em> the Android project directory), start the
 Metro bundler.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">$ npx react-native start
-</code></pre></div><p>Then, start the Android component.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell">$ npx react-native run-android
-</code></pre></div><p>You should then see the app load up in your emulator.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">$ npx react-native start
+</span></span></code></pre></div><p>Then, start the Android component.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">$ npx react-native run-android
+</span></span></code></pre></div><p>You should then see the app load up in your emulator.</p>
 <figure><img src="/images/minimal_react_native_android_app.png"/>
 </figure>
 
@@ -345,12 +345,12 @@ functionality with a continuous integration service.</p>
 instructions for the <a href="https://github.com/marketplace/actions/hugo-setup">hugo-setup</a> Action (<a href="https://github.com/peaceiris/actions-hugo/blob/d006b81d1845f59bb755a221aff0b61bbff15375/README.md">these</a> at the time of writing), we must
 then export the Org file as part of the workflow.  <a href="https://github.com/marketplace/actions/set-up-emacs">set-up-emacs</a> will install
 emacs and Org.  <a href="https://github.com/kaushalmodi/ox-hugo">ox-hugo</a> must be cloned separately.  Add a step to the job:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml">- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Clone Org-mode exporter</span><span class="w">
-</span><span class="w">  </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l">git clone https://github.com/kaushalmodi/ox-hugo.git ox-hugo</span><span class="w">
-</span></code></pre></div><p>Then add another step to call the export function:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml">- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Export Org file to Markdown</span><span class="w">
-</span><span class="w">  </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l">emacs ./posts.org --batch -L ./ox-hugo -l ox-hugo.el --eval=&#39;(org-hugo-export-wim-to-md t)&#39; --kill</span><span class="w">
-</span></code></pre></div><p>As written, we are assuming the Org file containing the posts is <code>posts.org</code> and
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl">- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Clone Org-mode exporter</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l">git clone https://github.com/kaushalmodi/ox-hugo.git ox-hugo</span><span class="w">
+</span></span></span></code></pre></div><p>Then add another step to call the export function:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl">- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">Export Org file to Markdown</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l">emacs ./posts.org --batch -L ./ox-hugo -l ox-hugo.el --eval=&#39;(org-hugo-export-wim-to-md t)&#39; --kill</span><span class="w">
+</span></span></span></code></pre></div><p>As written, we are assuming the Org file containing the posts is <code>posts.org</code> and
 located in the root of the repository.  All applicable subtrees are exported but
 the first argument to <code>org-hugo-export-wim-to-md</code> dictates that behaviour and
 can be changed.</p>
@@ -1257,7 +1257,7 @@ adding a reading time to posts with one addition to <code>config.toml</code>.</p
 <pre tabindex="0"><code class="language-nil" data-lang="nil">showReadingTime = true
 </code></pre><p>It&rsquo;s a small addition yet adds noted value for the reader.</p>
 <p>The next change instead provides insight for the sight maintainer:</p>
-<pre tabindex="0"><code class="language-nil" data-lang="nil">googleAnalytics = &quot;[your Google Analytics tracking ID]&quot;
+<pre tabindex="0"><code class="language-nil" data-lang="nil">googleAnalytics = &#34;[your Google Analytics tracking ID]&#34;
 </code></pre><p>Once your site starts getting some traffic, <a href="https://analytics.google.com/">Google Analytics</a> can help you create
 more targeted content.</p>
 <p>I&rsquo;ve also enabled my RSS feed to display the full contents of an article rather
@@ -1275,11 +1275,11 @@ such a grouping a <a href="https://gohugo.io/content-management/taxonomies/"><em
 and <em>tags</em>, but we can easily add our own as well, such as a <em>series</em> taxonomy.</p>
 <p>Enabling a taxonomy requires the name of it to be included in at least one
 post&rsquo;s front matter:</p>
-<pre tabindex="0"><code class="language-nil" data-lang="nil">series: [&quot;This Week I Discovered&quot;]
+<pre tabindex="0"><code class="language-nil" data-lang="nil">series: [&#34;This Week I Discovered&#34;]
 </code></pre><h2 id="somewhat-effortful-improvements">Somewhat effortful improvements</h2>
 <p>Adding a comments section could have been easy. Hugo supports <a href="https://disqus.com/">Disqus</a> comments
 out of the box. In your <code>config.toml</code>, simply add:</p>
-<pre tabindex="0"><code class="language-nil" data-lang="nil">disqusShortname = &quot;[your Disqus short name]&quot;
+<pre tabindex="0"><code class="language-nil" data-lang="nil">disqusShortname = &#34;[your Disqus short name]&#34;
 </code></pre><p>I ended up going this route, but there are alternatives.  <a href="https://staticman.net/">Staticman</a>, for
 example, doesn&rsquo;t require the comments to be stored by a third-party. It&rsquo;s much
 more appropriate for a static-content site. Staticman listens for incoming
@@ -1317,7 +1317,7 @@ automated deployments when pushing to GitHub. If you have a Travis CI account
 and continuous integration enabled for the repository, simply add a
 <code>.travis.yml</code> file with the following:</p>
 <pre tabindex="0"><code class="language-nil" data-lang="nil">sudo: required
-install: sudo bash -c &quot;$(curl -fsSL https://s3.amazonaws.com/tools.nanobox.io/bootstrap/ci.sh)&quot;
+install: sudo bash -c &#34;$(curl -fsSL https://s3.amazonaws.com/tools.nanobox.io/bootstrap/ci.sh)&#34;
 
 script:
   - nanobox remote add [your Nanobox project name]
@@ -1495,42 +1495,42 @@ management.</p>
 </ul>
 <p>First we declare out components. This includes a sprite component that wraps
 SDL2&rsquo;s <code>Rect</code> struct. SDL2 makes it easy to render =Rect=s to screen.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="cp">#[derive(Component)]</span><span class="w">
-</span><span class="w"></span><span class="k">struct</span> <span class="nc">Position</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span><span class="w">    </span><span class="n">x</span>: <span class="kt">f64</span><span class="p">,</span><span class="w">
-</span><span class="w">    </span><span class="n">y</span>: <span class="kt">f64</span><span class="p">,</span><span class="w">
-</span><span class="w"></span><span class="p">}</span><span class="w">
-</span><span class="w">
-</span><span class="w"></span><span class="cp">#[derive(Component)]</span><span class="w">
-</span><span class="w"></span><span class="k">struct</span> <span class="nc">Velocity</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span><span class="w">    </span><span class="n">x</span>: <span class="kt">f64</span><span class="p">,</span><span class="w">
-</span><span class="w">    </span><span class="n">y</span>: <span class="kt">f64</span><span class="p">,</span><span class="w">
-</span><span class="w"></span><span class="p">}</span><span class="w">
-</span><span class="w">
-</span><span class="w">
-</span><span class="w"></span><span class="cp">#[derive(Component)]</span><span class="w">
-</span><span class="w"></span><span class="k">struct</span> <span class="nc">Sprite</span><span class="p">(</span><span class="n">Rect</span><span class="p">);</span><span class="w">
-</span></code></pre></div><p>Then we declare out systems. The first one is to update the position of an
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="cp">#[derive(Component)]</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">struct</span> <span class="nc">Position</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">x</span>: <span class="kt">f64</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">y</span>: <span class="kt">f64</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="cp">#[derive(Component)]</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">struct</span> <span class="nc">Velocity</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">x</span>: <span class="kt">f64</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">y</span>: <span class="kt">f64</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="cp">#[derive(Component)]</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">struct</span> <span class="nc">Sprite</span><span class="p">(</span><span class="n">Rect</span><span class="p">);</span><span class="w">
+</span></span></span></code></pre></div><p>Then we declare out systems. The first one is to update the position of an
 entity given its velocity.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="k">struct</span> <span class="nc">MovementSystem</span><span class="p">;</span><span class="w">
-</span><span class="w">
-</span><span class="w"></span><span class="k">impl</span><span class="o">&lt;&#39;</span><span class="na">a</span><span class="o">&gt;</span><span class="w"> </span><span class="n">System</span><span class="o">&lt;&#39;</span><span class="na">a</span><span class="o">&gt;</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">MovementSystem</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span><span class="w">    </span><span class="k">type</span> <span class="nc">SystemData</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="w">
-</span><span class="w">	</span><span class="n">Fetch</span><span class="o">&lt;&#39;</span><span class="na">a</span><span class="p">,</span><span class="w"> </span><span class="n">Duration</span><span class="o">&gt;</span><span class="p">,</span><span class="w">
-</span><span class="w">	</span><span class="n">ReadStorage</span><span class="o">&lt;&#39;</span><span class="na">a</span><span class="p">,</span><span class="w"> </span><span class="n">Velocity</span><span class="o">&gt;</span><span class="p">,</span><span class="w">
-</span><span class="w">	</span><span class="n">WriteStorage</span><span class="o">&lt;&#39;</span><span class="na">a</span><span class="p">,</span><span class="w"> </span><span class="n">Position</span><span class="o">&gt;</span><span class="w">
-</span><span class="w">    </span><span class="p">);</span><span class="w">
-</span><span class="w">
-</span><span class="w">    </span><span class="k">fn</span> <span class="nf">run</span><span class="p">(</span><span class="o">&amp;</span><span class="k">mut</span><span class="w"> </span><span class="bp">self</span><span class="p">,</span><span class="w"> </span><span class="n">data</span>: <span class="nc">Self</span>::<span class="n">SystemData</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span><span class="w">	</span><span class="kd">let</span><span class="w"> </span><span class="p">(</span><span class="n">dt</span><span class="p">,</span><span class="w"> </span><span class="n">velocities</span><span class="p">,</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">positions</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">data</span><span class="p">;</span><span class="w">
-</span><span class="w">
-</span><span class="w">	</span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">vel</span><span class="p">,</span><span class="w"> </span><span class="n">pos</span><span class="p">)</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="p">(</span><span class="o">&amp;</span><span class="n">velocities</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="k">mut</span><span class="w"> </span><span class="n">positions</span><span class="p">).</span><span class="n">join</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span><span class="w">	    </span><span class="n">pos</span><span class="p">.</span><span class="n">x</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">vel</span><span class="p">.</span><span class="n">x</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">dt</span><span class="p">.</span><span class="n">subsec_nanos</span><span class="p">()</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="kt">f64</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">1_000_000_000.0</span><span class="p">;</span><span class="w">
-</span><span class="w">	    </span><span class="n">pos</span><span class="p">.</span><span class="n">y</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">vel</span><span class="p">.</span><span class="n">y</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">dt</span><span class="p">.</span><span class="n">subsec_nanos</span><span class="p">()</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="kt">f64</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">1_000_000_000.0</span><span class="p">;</span><span class="w">
-</span><span class="w">	</span><span class="p">}</span><span class="w">
-</span><span class="w">    </span><span class="p">}</span><span class="w">
-</span><span class="w"></span><span class="p">}</span><span class="w">
-</span></code></pre></div><p>This matches the logic described prior. The only difference is that we also
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="k">struct</span> <span class="nc">MovementSystem</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">impl</span><span class="o">&lt;&#39;</span><span class="na">a</span><span class="o">&gt;</span><span class="w"> </span><span class="n">System</span><span class="o">&lt;&#39;</span><span class="na">a</span><span class="o">&gt;</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">MovementSystem</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">type</span> <span class="nc">SystemData</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="n">Fetch</span><span class="o">&lt;&#39;</span><span class="na">a</span><span class="p">,</span><span class="w"> </span><span class="n">Duration</span><span class="o">&gt;</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="n">ReadStorage</span><span class="o">&lt;&#39;</span><span class="na">a</span><span class="p">,</span><span class="w"> </span><span class="n">Velocity</span><span class="o">&gt;</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="n">WriteStorage</span><span class="o">&lt;&#39;</span><span class="na">a</span><span class="p">,</span><span class="w"> </span><span class="n">Position</span><span class="o">&gt;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">fn</span> <span class="nf">run</span><span class="p">(</span><span class="o">&amp;</span><span class="k">mut</span><span class="w"> </span><span class="bp">self</span><span class="p">,</span><span class="w"> </span><span class="n">data</span>: <span class="nc">Self</span>::<span class="n">SystemData</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="kd">let</span><span class="w"> </span><span class="p">(</span><span class="n">dt</span><span class="p">,</span><span class="w"> </span><span class="n">velocities</span><span class="p">,</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">positions</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">data</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">vel</span><span class="p">,</span><span class="w"> </span><span class="n">pos</span><span class="p">)</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="p">(</span><span class="o">&amp;</span><span class="n">velocities</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="k">mut</span><span class="w"> </span><span class="n">positions</span><span class="p">).</span><span class="n">join</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	    </span><span class="n">pos</span><span class="p">.</span><span class="n">x</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">vel</span><span class="p">.</span><span class="n">x</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">dt</span><span class="p">.</span><span class="n">subsec_nanos</span><span class="p">()</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="kt">f64</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">1_000_000_000.0</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	    </span><span class="n">pos</span><span class="p">.</span><span class="n">y</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">vel</span><span class="p">.</span><span class="n">y</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">dt</span><span class="p">.</span><span class="n">subsec_nanos</span><span class="p">()</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="kt">f64</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">1_000_000_000.0</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></div><p>This matches the logic described prior. The only difference is that we also
 include a <em>delta time</em> input value. This represents the amount of time that has
 passed from one frame to the next. We need this because we don&rsquo;t have control on
 exactly when our function will be called again. We can aim for a target, say, 60
@@ -1541,53 +1541,53 @@ scale them like this!  <a href="https://gafferongames.com/post/integration%5Fbas
 happens.</p>
 <p>The other system we need converts logical world coordinates to screen
 coordinates.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="k">struct</span> <span class="nc">RenderSystem</span><span class="p">;</span><span class="w">
-</span><span class="w">
-</span><span class="w"></span><span class="k">impl</span><span class="o">&lt;&#39;</span><span class="na">a</span><span class="o">&gt;</span><span class="w"> </span><span class="n">System</span><span class="o">&lt;&#39;</span><span class="na">a</span><span class="o">&gt;</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">RenderSystem</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span><span class="w">    </span><span class="k">type</span> <span class="nc">SystemData</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">ReadStorage</span><span class="o">&lt;&#39;</span><span class="na">a</span><span class="p">,</span><span class="w"> </span><span class="n">Position</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="n">WriteStorage</span><span class="o">&lt;&#39;</span><span class="na">a</span><span class="p">,</span><span class="w"> </span><span class="n">Sprite</span><span class="o">&gt;</span><span class="p">);</span><span class="w">
-</span><span class="w">
-</span><span class="w">    </span><span class="k">fn</span> <span class="nf">run</span><span class="p">(</span><span class="o">&amp;</span><span class="k">mut</span><span class="w"> </span><span class="bp">self</span><span class="p">,</span><span class="w"> </span><span class="n">data</span>: <span class="nc">Self</span>::<span class="n">SystemData</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span><span class="w">	</span><span class="kd">let</span><span class="w"> </span><span class="p">(</span><span class="n">positions</span><span class="p">,</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">sprites</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">data</span><span class="p">;</span><span class="w">
-</span><span class="w">
-</span><span class="w">	</span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">pos</span><span class="p">,</span><span class="w"> </span><span class="n">sprite</span><span class="p">)</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="p">(</span><span class="o">&amp;</span><span class="n">positions</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="k">mut</span><span class="w"> </span><span class="n">sprites</span><span class="p">).</span><span class="n">join</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
-</span><span class="w">	    </span><span class="n">sprite</span><span class="p">.</span><span class="mf">0.</span><span class="n">set_x</span><span class="p">((</span><span class="n">pos</span><span class="p">.</span><span class="n">x</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">PIXELS_PER_UNIT</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="kt">i32</span><span class="p">);</span><span class="w">
-</span><span class="w">	    </span><span class="n">sprite</span><span class="p">.</span><span class="mf">0.</span><span class="n">set_y</span><span class="p">((</span><span class="n">pos</span><span class="p">.</span><span class="n">y</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">PIXELS_PER_UNIT</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="kt">i32</span><span class="p">);</span><span class="w">
-</span><span class="w">	</span><span class="p">}</span><span class="w">
-</span><span class="w">    </span><span class="p">}</span><span class="w">
-</span><span class="w"></span><span class="p">}</span><span class="w">
-</span></code></pre></div><p>Using logical world units for an entity&rsquo;s position frees us from the details of
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="k">struct</span> <span class="nc">RenderSystem</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">impl</span><span class="o">&lt;&#39;</span><span class="na">a</span><span class="o">&gt;</span><span class="w"> </span><span class="n">System</span><span class="o">&lt;&#39;</span><span class="na">a</span><span class="o">&gt;</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">RenderSystem</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">type</span> <span class="nc">SystemData</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">ReadStorage</span><span class="o">&lt;&#39;</span><span class="na">a</span><span class="p">,</span><span class="w"> </span><span class="n">Position</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="n">WriteStorage</span><span class="o">&lt;&#39;</span><span class="na">a</span><span class="p">,</span><span class="w"> </span><span class="n">Sprite</span><span class="o">&gt;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">fn</span> <span class="nf">run</span><span class="p">(</span><span class="o">&amp;</span><span class="k">mut</span><span class="w"> </span><span class="bp">self</span><span class="p">,</span><span class="w"> </span><span class="n">data</span>: <span class="nc">Self</span>::<span class="n">SystemData</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="kd">let</span><span class="w"> </span><span class="p">(</span><span class="n">positions</span><span class="p">,</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">sprites</span><span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">data</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">pos</span><span class="p">,</span><span class="w"> </span><span class="n">sprite</span><span class="p">)</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="p">(</span><span class="o">&amp;</span><span class="n">positions</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="k">mut</span><span class="w"> </span><span class="n">sprites</span><span class="p">).</span><span class="n">join</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	    </span><span class="n">sprite</span><span class="p">.</span><span class="mf">0.</span><span class="n">set_x</span><span class="p">((</span><span class="n">pos</span><span class="p">.</span><span class="n">x</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">PIXELS_PER_UNIT</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="kt">i32</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	    </span><span class="n">sprite</span><span class="p">.</span><span class="mf">0.</span><span class="n">set_y</span><span class="p">((</span><span class="n">pos</span><span class="p">.</span><span class="n">y</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">PIXELS_PER_UNIT</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="kt">i32</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></div><p>Using logical world units for an entity&rsquo;s position frees us from the details of
 our rendering process. When it comes to rendering, we simply scale the position
 by a constant factor to get screen coordinates, which is used by our sprite for
 rendering.</p>
 <p>Almost there. We now need to hook this all up to the <code>World</code>, which manages the
 entities.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">world</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">World</span>::<span class="n">new</span><span class="p">();</span><span class="w">
-</span><span class="w"></span><span class="n">world</span><span class="p">.</span><span class="n">add_resource</span><span class="p">(</span><span class="n">Duration</span>::<span class="n">new</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">));</span><span class="w">
-</span><span class="w"></span><span class="n">world</span><span class="p">.</span><span class="n">register</span>::<span class="o">&lt;</span><span class="n">Position</span><span class="o">&gt;</span><span class="p">();</span><span class="w">
-</span><span class="w"></span><span class="n">world</span><span class="p">.</span><span class="n">register</span>::<span class="o">&lt;</span><span class="n">Velocity</span><span class="o">&gt;</span><span class="p">();</span><span class="w">
-</span><span class="w"></span><span class="n">world</span><span class="p">.</span><span class="n">register</span>::<span class="o">&lt;</span><span class="n">Sprite</span><span class="o">&gt;</span><span class="p">();</span><span class="w">
-</span><span class="w">
-</span><span class="w"></span><span class="kd">let</span><span class="w"> </span><span class="n">initial_pos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Position</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">x</span>: <span class="mf">2.0</span><span class="p">,</span><span class="w"> </span><span class="n">y</span>: <span class="mf">2.0</span><span class="w"> </span><span class="p">};</span><span class="w">
-</span><span class="w"></span><span class="kd">let</span><span class="w"> </span><span class="n">initial_vel</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Velocity</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">x</span>: <span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="n">y</span>: <span class="mf">0.0</span><span class="w"> </span><span class="p">};</span><span class="w">
-</span><span class="w"></span><span class="kd">let</span><span class="w"> </span><span class="n">sprite</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Sprite</span><span class="p">(</span><span class="n">Rect</span>::<span class="n">new</span><span class="p">(</span><span class="w">
-</span><span class="w">	</span><span class="p">(</span><span class="n">initial_pos</span><span class="p">.</span><span class="n">x</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">PIXELS_PER_UNIT</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="kt">i32</span><span class="p">,</span><span class="w">
-</span><span class="w">	</span><span class="p">(</span><span class="n">initial_pos</span><span class="p">.</span><span class="n">y</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">PIXELS_PER_UNIT</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="kt">i32</span><span class="p">,</span><span class="w">
-</span><span class="w">	</span><span class="mi">32</span><span class="p">,</span><span class="w">
-</span><span class="w">	</span><span class="mi">32</span><span class="w">
-</span><span class="w"></span><span class="p">));</span><span class="w">
-</span><span class="w"></span><span class="n">world</span><span class="p">.</span><span class="n">create_entity</span><span class="p">()</span><span class="w">
-</span><span class="w">    </span><span class="p">.</span><span class="n">with</span><span class="p">(</span><span class="n">initial_pos</span><span class="p">)</span><span class="w">
-</span><span class="w">    </span><span class="p">.</span><span class="n">with</span><span class="p">(</span><span class="n">initial_vel</span><span class="p">)</span><span class="w">
-</span><span class="w">    </span><span class="p">.</span><span class="n">with</span><span class="p">(</span><span class="n">sprite</span><span class="p">)</span><span class="w">
-</span><span class="w">    </span><span class="p">.</span><span class="n">build</span><span class="p">();</span><span class="w">
-</span><span class="w">
-</span><span class="w"></span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">dispatcher</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">DispatcherBuilder</span>::<span class="n">new</span><span class="p">()</span><span class="w">
-</span><span class="w">    </span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="n">MovementSystem</span><span class="p">,</span><span class="w"> </span><span class="s">&#34;movement_system&#34;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="p">[])</span><span class="w">
-</span><span class="w">    </span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="n">RenderSystem</span><span class="p">,</span><span class="w"> </span><span class="s">&#34;render_system&#34;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="p">[</span><span class="s">&#34;movement_system&#34;</span><span class="p">])</span><span class="w">
-</span><span class="w">    </span><span class="p">.</span><span class="n">build</span><span class="p">();</span><span class="w">
-</span></code></pre></div><p>It&rsquo;s then just one line to update all of our entities.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="n">dispatcher</span><span class="p">.</span><span class="n">dispatch</span><span class="p">(</span><span class="o">&amp;</span><span class="k">mut</span><span class="w"> </span><span class="n">world</span><span class="p">.</span><span class="n">res</span><span class="p">);</span><span class="w">
-</span></code></pre></div><p>Of course, we need some additional infrastructure around this. The above line
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">world</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">World</span>::<span class="n">new</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">world</span><span class="p">.</span><span class="n">add_resource</span><span class="p">(</span><span class="n">Duration</span>::<span class="n">new</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">));</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">world</span><span class="p">.</span><span class="n">register</span>::<span class="o">&lt;</span><span class="n">Position</span><span class="o">&gt;</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">world</span><span class="p">.</span><span class="n">register</span>::<span class="o">&lt;</span><span class="n">Velocity</span><span class="o">&gt;</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">world</span><span class="p">.</span><span class="n">register</span>::<span class="o">&lt;</span><span class="n">Sprite</span><span class="o">&gt;</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">let</span><span class="w"> </span><span class="n">initial_pos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Position</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">x</span>: <span class="mf">2.0</span><span class="p">,</span><span class="w"> </span><span class="n">y</span>: <span class="mf">2.0</span><span class="w"> </span><span class="p">};</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">let</span><span class="w"> </span><span class="n">initial_vel</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Velocity</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">x</span>: <span class="mf">1.0</span><span class="p">,</span><span class="w"> </span><span class="n">y</span>: <span class="mf">0.0</span><span class="w"> </span><span class="p">};</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">let</span><span class="w"> </span><span class="n">sprite</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Sprite</span><span class="p">(</span><span class="n">Rect</span>::<span class="n">new</span><span class="p">(</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="p">(</span><span class="n">initial_pos</span><span class="p">.</span><span class="n">x</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">PIXELS_PER_UNIT</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="kt">i32</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="p">(</span><span class="n">initial_pos</span><span class="p">.</span><span class="n">y</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">PIXELS_PER_UNIT</span><span class="p">)</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="kt">i32</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="mi">32</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="mi">32</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">));</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">world</span><span class="p">.</span><span class="n">create_entity</span><span class="p">()</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">.</span><span class="n">with</span><span class="p">(</span><span class="n">initial_pos</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">.</span><span class="n">with</span><span class="p">(</span><span class="n">initial_vel</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">.</span><span class="n">with</span><span class="p">(</span><span class="n">sprite</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">.</span><span class="n">build</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">let</span><span class="w"> </span><span class="k">mut</span><span class="w"> </span><span class="n">dispatcher</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">DispatcherBuilder</span>::<span class="n">new</span><span class="p">()</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="n">MovementSystem</span><span class="p">,</span><span class="w"> </span><span class="s">&#34;movement_system&#34;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="p">[])</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="n">RenderSystem</span><span class="p">,</span><span class="w"> </span><span class="s">&#34;render_system&#34;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="p">[</span><span class="s">&#34;movement_system&#34;</span><span class="p">])</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">.</span><span class="n">build</span><span class="p">();</span><span class="w">
+</span></span></span></code></pre></div><p>It&rsquo;s then just one line to update all of our entities.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-rust" data-lang="rust"><span class="line"><span class="cl"><span class="n">dispatcher</span><span class="p">.</span><span class="n">dispatch</span><span class="p">(</span><span class="o">&amp;</span><span class="k">mut</span><span class="w"> </span><span class="n">world</span><span class="p">.</span><span class="n">res</span><span class="p">);</span><span class="w">
+</span></span></span></code></pre></div><p>Of course, we need some additional infrastructure around this. The above line
 should belong in the application run loop. That loop should also contain input
 handling and rendering to a hardware context.</p>
 <p>You may be able to implement those as systems as well, but at some point you
@@ -1696,33 +1696,33 @@ accommodated that, so let&rsquo;s begin.</p>
 <h2 id="building-the-basics">Building the basics</h2>
 <p>Hugo already has a great <a href="https://gohugo.io/getting-started/quick-start/">quick start</a> guide that we&rsquo;ll follow to begin with.</p>
 <p>First install Hugo with your package manager of choice.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="c1"># OS X buddies</span>
-$ brew install hugo
-
-<span class="c1"># Arch compatriots</span>
-$ sudo pacman --sync hugo
-
-<span class="c1"># Gentoo and friends</span>
-$ sudo layman --add go-overlay
-$ sudo emerge --ask www-apps/hugo
-</code></pre></div><p>Let&rsquo;s create a skeleton site and add a theme. You can browse available themes
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="c1"># OS X buddies</span>
+</span></span><span class="line"><span class="cl">$ brew install hugo
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Arch compatriots</span>
+</span></span><span class="line"><span class="cl">$ sudo pacman --sync hugo
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Gentoo and friends</span>
+</span></span><span class="line"><span class="cl">$ sudo layman --add go-overlay
+</span></span><span class="line"><span class="cl">$ sudo emerge --ask www-apps/hugo
+</span></span></code></pre></div><p>Let&rsquo;s create a skeleton site and add a theme. You can browse available themes
 <a href="https://themes.gohugo.io/">here</a>. I&rsquo;ll be using the
 <a href="https://minimo.netlify.com/">Minimo</a> theme.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">$ hugo new site wild-baguette $ <span class="nb">cd</span> wild-baguette $ git init $ git
-submodule add https://github.com/MunifTanjim/minimo themes/minimo
-</code></pre></div><p>This is <em>all</em> you need for a basic site without any content (yet). Let&rsquo;s pause
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">$ hugo new site wild-baguette $ <span class="nb">cd</span> wild-baguette $ git init $ git
+</span></span><span class="line"><span class="cl">submodule add https://github.com/MunifTanjim/minimo themes/minimo
+</span></span></code></pre></div><p>This is <em>all</em> you need for a basic site without any content (yet). Let&rsquo;s pause
 here and check out the folder structure.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">$ tree -I minimo <span class="c1"># ignore the theme directory</span>
-.
-├── archetypes
-│   └── default.md
-├── config.toml
-├── content
-├── data
-├── layouts
-├── static
-└── themes
-</code></pre></div><p>Excluding the theme, there&rsquo;s only two files! We&rsquo;ll cover <code>archtype=s in a moment when we add some content, but for now let's open up =config.toml</code>. You will
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">$ tree -I minimo <span class="c1"># ignore the theme directory</span>
+</span></span><span class="line"><span class="cl">.
+</span></span><span class="line"><span class="cl">├── archetypes
+</span></span><span class="line"><span class="cl">│   └── default.md
+</span></span><span class="line"><span class="cl">├── config.toml
+</span></span><span class="line"><span class="cl">├── content
+</span></span><span class="line"><span class="cl">├── data
+</span></span><span class="line"><span class="cl">├── layouts
+</span></span><span class="line"><span class="cl">├── static
+</span></span><span class="line"><span class="cl">└── themes
+</span></span></code></pre></div><p>Excluding the theme, there&rsquo;s only two files! We&rsquo;ll cover <code>archtype=s in a moment when we add some content, but for now let's open up =config.toml</code>. You will
 likely need to add options specific to the theme you chose. Most importantly,
 actually set the theme with the <code>theme</code> key! You can find out relevant options
 for the Minimo theme on <a href="https://github.com/kwyse/personal-website/blob/b00c1f66a4a30f260347a8507d479f0c9fde36f9/config.toml">this commit</a> I made for this site. Minimo has its own
@@ -1731,12 +1731,12 @@ comprehensive configuration <a href="https://themes.gohugo.io/theme/minimo/docs/
 starting the server.</p>
 <p>Fire up the Hugo server and navigate to the URL displayed in the output.  You
 should see something beautiful. If not, ensure your configuration is correct.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">$ hugo server
-</code></pre></div><h2 id="adding-content-and-customising">Adding content and customising</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">$ hugo server
+</span></span></code></pre></div><h2 id="adding-content-and-customising">Adding content and customising</h2>
 <p>What good are wild baguettes if you can&rsquo;t find them? Being good citizens, we&rsquo;ll
 share our knowledge on their habitats in our first blog post.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">$ hugo new posts/where_to_find_them.md
-</code></pre></div><p>The <code>posts</code> directory will be nested under <code>contents</code> in the project root. Fill
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">$ hugo new posts/where_to_find_them.md
+</span></span></code></pre></div><p>The <code>posts</code> directory will be nested under <code>contents</code> in the project root. Fill
 this file with whatever pleases you. The important thing is the front
 matter. That&rsquo;s the bit in the <code>---</code> block at the top of the file. By default,
 Hugo will use the <code>title</code> for the post&rsquo;s title (say what?) and the name of the
@@ -1747,8 +1747,8 @@ wish to provide. The default archetype suffices for a simple blog.</p>
 <p>Nesting the new post under the <code>posts</code> directory will also nest it in the URL.
 With that in mind, it makes sense to have a <code>posts</code> page on the site. We need to
 create a new file for that.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">$ <span class="nb">echo</span> <span class="s1">&#39;---\ntitle: Posts\n---&#39;</span> &gt; content/posts/_index.md
-</code></pre></div><p>Each <a href="https://gohugo.io/content-management/sections/">section</a>, or distinct part of our site, can contain a <code>_index.md</code> file that
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">$ <span class="nb">echo</span> <span class="s1">&#39;---\ntitle: Posts\n---&#39;</span> &gt; content/posts/_index.md
+</span></span></code></pre></div><p>Each <a href="https://gohugo.io/content-management/sections/">section</a>, or distinct part of our site, can contain a <code>_index.md</code> file that
 represents the section itself rather than its children, like posts do.  The
 value we give to <code>title</code> here will be what&rsquo;s shown on the section page and in
 the navigation bar. One more change: add <code>sectionPagesMenu = &quot;main&quot;</code> to
@@ -1757,8 +1757,8 @@ could be different for your chosen theme. For Minimo, it is <code>main</code>.</
 <p>Start the server again and see our new navigation menu and post rendered. The
 <code>-D</code> flag here indicates we want to render draft posts in addition to regular
 ones.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">$ hugo server -D
-</code></pre></div><p>Let&rsquo;s personalise the theme a bit. Minimo gives you a very easy way to override
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">$ hugo server -D
+</span></span></code></pre></div><p>Let&rsquo;s personalise the theme a bit. Minimo gives you a very easy way to override
 the CSS with the <code>customCSS</code> key in <code>config.toml</code>. You can read about a specific
 use case <a href="https://discourse.gohugo.io/t/minimo-css-customization/7173/4">here</a>, where the accent colour is changed.</p>
 <p>Changing layout content is down to Hugo, so it should be independent of the
@@ -1794,8 +1794,8 @@ us to tell it how to run our Hugo project: <a href="https://github.com/kwyse/per
 what commands to run, and <a href="https://github.com/kwyse/personal-website/blob/65791863bff9abfd4c6e430ca38d601c90d9b61c/install.sh"><code>install.sh</code></a>, which is called by <code>boxfile.yml</code> and
 actually installs Hugo inside the container. Add these files to your project,
 then tell Nanobox to deploy!</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh">$ nanobox remote add &lt;nanobox-app-name&gt; $ nanobox deploy
-</code></pre></div><p>Visit your Nanobox portal and find a link that takes you to the deployed site!
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">$ nanobox remote add &lt;nanobox-app-name&gt; $ nanobox deploy
+</span></span></code></pre></div><p>Visit your Nanobox portal and find a link that takes you to the deployed site!
 Too easy!</p>
 <p>The next logical step is to set up a domain name for your site. I use <a href="https://www.namecheap.com/">NameCheap</a>
 and have been very happy with their service. The prices are competitive and they
