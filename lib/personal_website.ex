@@ -7,7 +7,7 @@ defmodule PersonalWebsite do
   def index(assigns) do
     ~H"""
     <.layout>
-      <main class="h-screen flex flex-col bg-slate-500">
+      <main class="h-dvh flex flex-col bg-slate-500">
         <section class="grow flex">
           <div class="container w-[400px] m-auto">
             <h1 class="py-16 text-4xl text-neutral-100 font-serif italic">A whisper on the wind</h1>
@@ -31,7 +31,7 @@ defmodule PersonalWebsite do
       <meta charset="utf-8" />
       <link rel="stylesheet" href="/assets/app.css" />
       <script type="text/javascript" src="/assets/app.js" />
-      <body>
+      <body class="h-full min-h-full">
         {render_slot(@inner_block)}
       </body>
     </html>
