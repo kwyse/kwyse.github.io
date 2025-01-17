@@ -7,7 +7,7 @@ defmodule PersonalWebsite do
   def index(assigns) do
     ~H"""
     <.layout>
-      <main class="h-dvh flex flex-col bg-slate-500">
+      <main class="h-[100dvh] flex flex-col bg-slate-500">
         <section class="grow flex">
           <div class="container w-[400px] m-auto">
             <h1 class="py-16 text-4xl text-neutral-100 font-serif italic">A whisper on the wind</h1>
