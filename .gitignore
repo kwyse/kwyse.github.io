@@ -1,0 +1,10 @@
+.elixir_ls
+*.ez
+erl_crash.dump
+personal_website-*.tar
+_build/
+cover/
+deps/
+doc/
+output/
+tmp/
