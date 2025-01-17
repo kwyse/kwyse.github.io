@@ -21,6 +21,7 @@ jobs:
       - name: Install Elixir
         uses: erlef/setup-beam@v1
         with:
+          version-type: strict
           version-file: .tool-versions
       - name: Build
         run: mix site.build
